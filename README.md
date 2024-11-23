@@ -102,12 +102,45 @@ Aplicação `Java` que segue o padrão _`Data Access Object`_ (`DAO`) para acess
 </project>
 ```
 
-5) Criar das Entidades, _`Plain Old Java Object`_ (`POJOs`), na pasta `src/main/java/com/exemplo/model`:
+7) Criar das Entidades, _`Plain Old Java Object`_ (`POJOs`), na pasta `src/main/java/com/exemplo/model`:
 
 `Fornecedor.java`, `Produto.java`, `Identificacao.java`, `Filial.java` e `Estoque.java`.
 
-6) Criar as classes dos _`Data Access Objects`_ (`DAOs`) na pasta `src/main/java/com/exemplo/dao`:
+8) Criar as classes dos _`Data Access Objects`_ (`DAOs`) na pasta `src/main/java/com/exemplo/dao`:
 
 `FornecedorDAO.java`, `ProdutoDAO.java`, `IdentificacaoDAO.java`, `FilialDAO.java` e `EstoqueDAO.java`.
 
-7) Criar a classe Principal `Main.java` na pasta `src/main/java/com/exemplo`, para testar as operações.
+9) Criar a classe Principal `Main.java` na pasta `src/main/java/com/exemplo`, para testar as operações.
+
+
+10) Instalar todas as dependências do projeto `Maven` listadas no arquivo `pom.xml`:
+```
+  mvn clean install
+```
+
+11) Compilar o projeto:
+ ```
+  mvn clean compile
+ ```
+
+12) Executar o projeto:
+ ```
+  mvn exec:java -Dexec.mainClass="Main"
+ ```
+ 
+13) Observar a saída do projeto.
+ 
+14) Clicar no arquivo `teste.db`. No painel lateral direito, clicar nas tabelas do banco de dados. Observar os registros inseridos na tabela.
+
+15) Executar:
+```
+  git add .
+```
+
+```
+  git commit -m "mensagem"
+```
+
+```
+  git push
+```
