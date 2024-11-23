@@ -42,11 +42,11 @@ Aplicação `Java` que segue o padrão _`Data Access Object`_ (`DAO`) para acess
 ```
 
 ```
-  src/main/java/com/exemplo/dao
+  src/main/java/com/exemplo/model
 ```
 
 ```
-  src/main/java/com/exemplo/model
+  src/main/java/com/exemplo/dao
 ```
 
 6) Criar o arquivo `pom.xml`.
@@ -101,3 +101,11 @@ Aplicação `Java` que segue o padrão _`Data Access Object`_ (`DAO`) para acess
     </build>
 </project>
 ```
+
+5) Criar das Entidades, _`Plain Old Java Object`_ (`POJOs`), na pasta `src/main/java/com/exemplo/model`.
+`Fornecedor.java`, `Produto.java`, `Identificacao.java`, `Filial.java` e `Estoque.java`.
+
+6) Criar as classes dos _`Data Access Objects`_ (`DAOs`) na pasta `src/main/java/com/exemplo/dao`.
+`FornecedorDAO.java`, `ProdutoDAO.java`, `IdentificacaoDAO.java`, `FilialDAO.java` e `EstoqueDAO.java`.
+
+7) Criar a classe Principal `Main.java` na pasta `src/main/java/com/exemplo`, para testar as operações.
