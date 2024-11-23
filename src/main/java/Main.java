@@ -3,6 +3,8 @@ package com.exemplo;
 import com.exemplo.dao.*;
 import com.exemplo.model.*;
 
+import java.sql.Date;
+
 public class Main {
     public static void main(String[] args) {
         // Instanciar DAOs:
