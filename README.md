@@ -128,9 +128,11 @@ Aplicação `Java` que segue o padrão _`Data Access Object`_ (`DAO`) para acess
   mvn exec:java -Dexec.mainClass="Main"
  ```
  
-13) Observar a saída do projeto.
+13) Observar a saída do projeto:
+![Alt: saída do projeto.](SaidaDoProjeto.png)
  
-14) Clicar no arquivo `teste.db`. No painel lateral direito, clicar nas tabelas do banco de dados. Observar os registros inseridos na tabela.
+14) Clicar no arquivo `meu-banco.db`. No painel lateral direito, clicar nas tabelas do banco de dados. Observar os registros inseridos na tabela.
+![Alt: Tabelas do Banco de Dados.](TabelasDoBancoDeDados.png)
 
 15) Executar:
 ```
