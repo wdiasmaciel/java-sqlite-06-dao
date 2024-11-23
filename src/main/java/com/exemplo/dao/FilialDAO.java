@@ -6,12 +6,30 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FilialDAO {
+    public void criarTabela() {
+        try (Connection connection = Conexao.getConnection();
+                Statement statement = connection.createStatement()) {
+            String createTableSQL = """
+                    -- Criação da tabela Filial
+                    CREATE TABLE IF NOT EXISTS Filial (
+                        cnpj TEXT PRIMARY KEY,
+                        nome TEXT NOT NULL,
+                        telefone TEXT NOT NULL,
+                        endereco TEXT NOT NULL
+                    );
+                """;
+            statement.execute(createTableSQL);
+        } catch (SQLException e) {
+            System.err.println("Erro na comunicação com o banco de dados!");
+            e.printStackTrace();
+        }
+    }
 
     public void inserir(Filial filial) {
         String sql = "INSERT INTO Filial (cnpj, nome, telefone, endereco) VALUES (?, ?, ?, ?)";
 
         try (Connection connection = Conexao.getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+                PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
 
             preparedStatement.setString(1, filial.getCnpj());
             preparedStatement.setString(2, filial.getNome());
@@ -29,8 +47,8 @@ public class FilialDAO {
         List<Filial> filiais = new ArrayList<>();
 
         try (Connection connection = Conexao.getConnection();
-             Statement statement = connection.createStatement();
-             ResultSet resultSet = statement.executeQuery(sql)) {
+                Statement statement = connection.createStatement();
+                ResultSet resultSet = statement.executeQuery(sql)) {
 
             while (resultSet.next()) {
                 Filial filial = new Filial();

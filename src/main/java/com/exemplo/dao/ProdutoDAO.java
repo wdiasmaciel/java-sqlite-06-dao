@@ -6,6 +6,26 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ProdutoDAO {
+    public void criarTabela() {
+        try (Connection connection = Conexao.getConnection();
+                Statement statement = connection.createStatement()) {
+            String createTableSQL = """
+                    -- Criação da tabela Produto
+                    CREATE TABLE IF NOT EXISTS Produto (
+                        id INTEGER PRIMARY KEY AUTOINCREMENT,
+                        id_fornecedor INTEGER NOT NULL,
+                        nome TEXT NOT NULL,
+                        preco REAL NOT NULL,
+                        validade DATE NOT NULL,
+                        FOREIGN KEY (id_fornecedor) REFERENCES Fornecedor(id)
+                    );
+                """;
+            statement.execute(createTableSQL);
+        } catch (SQLException e) {
+            System.err.println("Erro na comunicação com o banco de dados!");
+            e.printStackTrace();
+        }
+    }
 
     public void inserir(Produto produto) {
         String sql = "INSERT INTO Produto (id_fornecedor, nome, preco, validade) VALUES (?, ?, ?, ?)";

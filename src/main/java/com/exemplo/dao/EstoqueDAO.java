@@ -6,6 +6,26 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class EstoqueDAO {
+    public void criarTabela() {
+        try (Connection connection = Conexao.getConnection();
+                Statement statement = connection.createStatement()) {
+            String createTableSQL = """
+                    -- Criação da tabela Estoque
+                    CREATE TABLE IF NOT EXISTS Estoque (
+                        id_produto INTEGER NOT NULL,
+                        cnpj_filial TEXT NOT NULL,
+                        quantidade INTEGER NOT NULL,
+                        PRIMARY KEY (id_produto, cnpj_filial),
+                        FOREIGN KEY (id_produto) REFERENCES Produto(id),
+                        FOREIGN KEY (cnpj_filial) REFERENCES Filial(cnpj)
+                    );
+                """;
+            statement.execute(createTableSQL);
+        } catch (SQLException e) {
+            System.err.println("Erro na comunicação com o banco de dados!");
+            e.printStackTrace();
+        }
+    }
 
     public void inserir(Estoque estoque) {
         String sql = "INSERT INTO Estoque (id_produto, cnpj_filial, quantidade) VALUES (?, ?, ?)";
