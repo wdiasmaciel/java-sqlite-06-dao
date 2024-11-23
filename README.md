@@ -5,13 +5,13 @@ Aplicação `Java` que segue o padrão _`Data Access Object`_ (`DAO`) para acess
 ![Alt: DER](DER.png)
 
 ## Passos para Criar o Projeto:
-1) Criar repositório.
+1) Criação do repositório no `GitHub`.
 
-2) Instalar _plugin_ para algoritmos em Java e visualização do banco de dados _`SQLite`_.
+2) Instalação dos _plugin_ para algoritmos em Java e visualização do banco de dados _`SQLite`_.
 
-3) Criar a estrutura do Projeto.
+3) Criação da estrutura do Projeto.
 
-4) Configuração do arquivo `pom.xml`.
+4) Criação do arquivo `pom.xml`.
 
 5) Criação das Entidades, _`Plain Old Java Object`_ (`POJOs`).
 
