@@ -5,11 +5,19 @@ import com.exemplo.model.*;
 
 public class Main {
     public static void main(String[] args) {
+        // Instanciar DAOs:
         FornecedorDAO fornecedorDAO = new FornecedorDAO();
         ProdutoDAO produtoDAO = new ProdutoDAO();
         IdentificacaoDAO identificacaoDAO = new IdentificacaoDAO();
         FilialDAO filialDAO = new FilialDAO();
         EstoqueDAO estoqueDAO = new EstoqueDAO();
+
+        // Criar tabelas:
+        fornecedorDAO.criarTabela();
+        produtoDAO.criarTabela();
+        identificacaoDAO.criarTabela();
+        filialDAO.criarTabela();
+        estoqueDAO.criarTabela();
 
         // Criar e inserir exemplos de Fornecedor:
         Fornecedor fornecedor1 = new Fornecedor();
